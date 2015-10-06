@@ -1,23 +1,23 @@
 {
-  "name" : "soynode",
+  "name" : "nodesoy",
   "version" : "1.0.1",
   "description" : "Utility for working with Closure Templates, aka Soy, from within a node.js application.",
   "keywords" : ["node", "soy", "templates", "closure"],
   "repository" : {
     "type" : "git",
-    "url" : "http://github.com/Medium/soynode.git"
+    "url" : "http://github.com/real/nodesoy.git"
   },
-  "homepage" : "https://github.com/Medium/soynode",
+  "homepage" : "https://github.com/real/nodesoy",
   "author" : {
-    "name" : "Daniel Pupius",
-    "email" : "dan@medium.com",
-    "url" : "https://github.com/dpup"
+    "name" : "Ariel Saldana",
+    "email" : "ariel@unreal.io",
+    "url" : "https://github.com/arielsaldana"
   },
-  "main" : "./lib/soynode.js",
+  "main" : "./lib/nodesoy.js",
   "directories": {"lib": "./lib"},
   "dependencies": {
     "closure-templates": "^20150605.0.0",
-    "obvious-closure-library": "^20150605.0.0",
+    "unreal-closure-library": "^20150605.0.0",
     "q": "1.4.1"
   },
   "devDependencies": {
