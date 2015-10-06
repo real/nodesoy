@@ -4,24 +4,24 @@
  * @fileoverview Basic benchmark for hello world template that calls one nested template.
  */
 
-var soynode = require('../lib/soynode')
+var nodesoy = require('../lib/nodesoy')
 
 var USER = process.env.USER || 'Stranger'
 
-soynode.setOptions({
-    outputDir: '/tmp/soynode-example'
+nodesoy.setOptions({
+    outputDir: '/tmp/nodesoy-example'
   , uniqueDir: true
   , eraseTemporaryFiles: true
 })
 
 var iterations = 5000
 
-soynode.compileTemplates(__dirname, function (err) {
+nodesoy.compileTemplates(__dirname, function (err) {
   if (err) throw err
   var d = Date.now()
   var results = []
   for (var i = 0; i < iterations; i++) {
-    results.push(soynode.render('example.message.hello', {
+    results.push(nodesoy.render('example.message.hello', {
         name: USER
       , date: new Date().toLocaleTimeString()
     }))

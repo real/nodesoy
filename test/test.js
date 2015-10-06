@@ -3,7 +3,7 @@
 var child_process = require('child_process')
 var fs = require('fs');
 var path = require('path');
-var soynode = require('../lib/soynode.js');
+var nodesoy = require('../lib/nodesoy.js');
 var nodeunitq = require('nodeunitq')
 var builder = new nodeunitq.Builder(exports)
 var Q = require('q')
@@ -19,7 +19,7 @@ var time
 var soyCompiler
 
 exports.setUp = function (done) {
-  soyCompiler = new soynode.SoyCompiler()
+  soyCompiler = new nodesoy.SoyCompiler()
 
   time = 1
   Date.now = function () { return time; }
@@ -137,7 +137,7 @@ builder.add(function testDefaultShouldDeclareTopLevelNamespaces(test) {
   soyCompiler.compileTemplateFiles([__dirname + '/assets/template1.soy'], function(err) {
     test.ifError(err);
 
-    var soyJsFilePath = path.join('/tmp/soynode', __dirname, 'assets/template1.soy.js');
+    var soyJsFilePath = path.join('/tmp/nodesoy', __dirname, 'assets/template1.soy.js');
     var contents = fs.readFileSync(soyJsFilePath, 'utf8');
     test.notEqual(-1, contents.indexOf('var template1 ='));
 
@@ -154,7 +154,7 @@ builder.add(function testFalseShouldDeclareTopLevelNamespaces(test) {
   soyCompiler.compileTemplateFiles([__dirname + '/assets/template1.soy'], function(err) {
     test.ifError(err);
 
-    var soyJsFilePath = path.join('/tmp/soynode', __dirname, 'assets/template1.soy.js');
+    var soyJsFilePath = path.join('/tmp/nodesoy', __dirname, 'assets/template1.soy.js');
     var contents = fs.readFileSync(soyJsFilePath, 'utf8');
     test.equal(-1, contents.indexOf('var template1 ='));
 
@@ -169,7 +169,7 @@ builder.add(function testWithIjData(test) {
   soyCompiler.compileTemplateFiles([__dirname + '/assets/template1.soy', __dirname + '/assets/template2.soy'], function(err) {
     test.ifError(err);
 
-    var soyJsFilePath = path.join('/tmp/soynode', __dirname, 'assets/template2.soy.js');
+    var soyJsFilePath = path.join('/tmp/nodesoy', __dirname, 'assets/template2.soy.js');
     var contents = fs.readFileSync(soyJsFilePath, 'utf8');
     test.notEqual(-1, contents.indexOf('template1.formletter(opt_data, null, opt_ijData)'));
 

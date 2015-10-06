@@ -1,28 +1,28 @@
 // Copyright (c)2012 The Obvious Corporation
 
 /**
- * @fileoverview Very basic example showing usage of `soynode`.  Try changing message.soy while
+ * @fileoverview Very basic example showing usage of `nodesoy`.  Try changing message.soy while
  * running this example to see the effects of dynamic recompilation.
  */
 
-var soynode = require('../lib/soynode')
+var nodesoy = require('../lib/nodesoy')
 
 var USER = process.env.USER || 'Stranger'
 
-soynode.setOptions({
-    outputDir: '/tmp/soynode-example'
+nodesoy.setOptions({
+    outputDir: '/tmp/nodesoy-example'
   , uniqueDir: true
   , allowDynamicRecompile: true
   , eraseTemporaryFiles: true
 })
 
-soynode.compileTemplates(__dirname, function (err) {
+nodesoy.compileTemplates(__dirname, function (err) {
   if (err) throw err
 
   console.log('Templates are ready, Ctrl-C to exit')
 
   setInterval(function () {
-    console.log(soynode.render('example.message.hello', {
+    console.log(nodesoy.render('example.message.hello', {
         name: USER
       , date: new Date().toLocaleTimeString()
       , variantToUse: Date.now() % 2 ? 'alpha' : 'beta'
@@ -30,11 +30,10 @@ soynode.compileTemplates(__dirname, function (err) {
   }, 1000)
 
   process.on('SIGINT', function () {
-    console.log(soynode.render('example.message.bye', {
+    console.log(nodesoy.render('example.message.bye', {
         name: USER
     }))
     process.exit(0)
   })
 
 })
-
