@@ -85,6 +85,7 @@ builder.add(function testCompileTemplatesWatchDelTemplate(test) {
     test.equal('The default template', soyCompiler.render('template3.main', {}))
     test.equal('Hello world', soyCompiler.render('template3.main', {type: 'hello'}))
     test.equal('The default template', soyCompiler.render('template3.main', {type: 'goodbye'}))
+    test.done();
   });
 })
 
@@ -198,4 +199,5 @@ function assertTemplatesContents(test, locale) {
       test.equal(template2, 'Dear Mr. Santos: With a name like Mr. Santos, shouldn\'t you have your own theme song? We can help!');
       break;
   }
+  test.done();
 }
