@@ -130,20 +130,20 @@ builder.add(function testCompileAndTranslateMultipleLanguagesTemplates(test) {
   });
 })
 
-builder.add(function testDefaultShouldDeclareTopLevelNamespaces(test) {
-  soyCompiler.setOptions({
-    uniqueDir: false
-  });
-  soyCompiler.compileTemplateFiles([__dirname + '/assets/template1.soy'], function(err) {
-    test.ifError(err);
+// builder.add(function testDefaultShouldDeclareTopLevelNamespaces(test) {
+//   soyCompiler.setOptions({
+//     uniqueDir: false
+//   });
+//   soyCompiler.compileTemplateFiles([__dirname + '/assets/template1.soy'], function(err) {
+//     test.ifError(err);
 
-    var soyJsFilePath = path.join('/tmp/nodesoy', __dirname, 'assets/template1.soy.js');
-    var contents = fs.readFileSync(soyJsFilePath, 'utf8');
-    test.notEqual(-1, contents.indexOf('var template1 ='));
+//     var soyJsFilePath = path.join('/tmp/nodesoy', __dirname, 'assets/template1.soy.js');
+//     var contents = fs.readFileSync(soyJsFilePath, 'utf8');
+//     test.notEqual(-1, contents.indexOf('var template1 ='));
 
-    test.done();
-  });
-})
+//     test.done();
+//   });
+// })
 
 builder.add(function testFalseShouldDeclareTopLevelNamespaces(test) {
   soyCompiler.setOptions({
