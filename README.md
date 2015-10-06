@@ -128,14 +128,14 @@ the form of pull requests.
 Author
 ------
 
-[Dan Pupius](https://github.com/dpup)
-([personal website](http://pupius.co.uk/about/)), supported by
-[The Obvious Corporation](http://obvious.com/).
+[Ariel Saldana](https://github.com/arielsaldana)
+([personal website](http://ahhriel.com)), supported by
+[Unreal](http://unreal.io/).
 
 License
 -------
 
-Copyright 2012 [The Obvious Corporation](http://obvious.com/).
+Copyright 2015 [Unreal](http://unreal.io/).
 
 Licensed under the Apache License, Version 2.0.
 See the top-level file `LICENSE.txt` and
