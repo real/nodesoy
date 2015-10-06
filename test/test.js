@@ -160,7 +160,7 @@ builder.add(function testFalseShouldDeclareTopLevelNamespaces(test) {
   //   test.equal(-1, contents.indexOf('var template1 ='));
 
     test.done();
-  });
+  // });
 })
 
 builder.add(function testWithIjData(test) {
