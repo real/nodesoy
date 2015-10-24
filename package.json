@@ -16,8 +16,8 @@
   "main" : "./lib/nodesoy.js",
   "directories": {"lib": "./lib"},
   "dependencies": {
-    "closure-templates": "^20150605.0.0",
-    "unreal-closure-library": "^20150605.0.0",
+    "closure-templates": "^20151008.0.0",
+    "unreal-closure-library": "^20150605.0.1",
     "q": "1.4.1"
   },
   "devDependencies": {
